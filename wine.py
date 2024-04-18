@@ -25,7 +25,7 @@ from helpers import diki, student, invboxcox
 path = os.path.dirname(os.path.abspath(__file__))
 path_to_data_folder = join(path, 'data')
 
-wine = pd.read_csv(join(path_to_data_folder, 'monthly-australian-wine-sales.csv'), ',', index_col=['month'], parse_dates=['month'], dayfirst=True)
+wine = pd.read_csv(join(path_to_data_folder, 'monthly-australian-wine-sales.csv'), sep=',', index_col=['month'], parse_dates=['month'], dayfirst=True)
 wine.sales = wine.sales * 1000
 
 wine.sales.plot(title="Diki: " + str(diki(wine.sales)))
